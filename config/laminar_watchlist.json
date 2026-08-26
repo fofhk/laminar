@@ -1,0 +1,584 @@
+{
+  "frozen_at": "2026-08-14T05:51:31.519474+00:00",
+  "filter": {
+    "min_daily_rate": 20.0,
+    "min_days_out": 90,
+    "midpoint_band": [
+      0.1,
+      0.9
+    ],
+    "max_markets": 30
+  },
+  "markets": [
+    {
+      "condition_id": "0x80b3af88cb991980e8da1ce86b9794a0957f96ec98c29319dd7ba65e9744d82b",
+      "market_slug": "fed-rate-hike-in-2026",
+      "question": "Fed rate hike in 2026?",
+      "end_date_iso": "2026-12-09T00:00:00Z",
+      "daily_rate": 500.0,
+      "max_spread": 4.5,
+      "min_size": 100.0,
+      "tokens": [
+        {
+          "token_id": "75028752776148090296091099469912621384650554615761384992997579209329182670110",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "93005850938352995663334573245996733794924636935158112548608169054144721737755",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x5db999fad322cea2914535aae5517060c3f80ad6d8c0231cde2124a434d16846",
+      "market_slug": "will-the-us-invade-iran-before-2027",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 400.0,
+      "max_spread": 3.5,
+      "min_size": 200.0,
+      "tokens": [
+        {
+          "token_id": "55115078421062885512539156303747803058407616201213034911037320915726138659123",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "1910830010387565971650098373488592514702818137344973088263643820608151819241",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0",
+      "market_slug": "will-there-be-no-change-in-fed-interest-rates-after-the-december-2026-meeting-20260729232808635",
+      "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+      "end_date_iso": "2026-12-09T00:00:00Z",
+      "daily_rate": 265.0,
+      "max_spread": 4.5,
+      "min_size": 100.0,
+      "tokens": [
+        {
+          "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x8a4196617dcb703e49d9bb36d3847bf6a75fd364dbd19f8d408ac944bf1a03d8",
+      "market_slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-december-2026-meeting-20260729232808636",
+      "question": "Will the Fed increase interest rates by 25 bps after the December 2026 meeting?",
+      "end_date_iso": "2026-12-09T00:00:00Z",
+      "daily_rate": 235.0,
+      "max_spread": 4.5,
+      "min_size": 100.0,
+      "tokens": [
+        {
+          "token_id": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "94483965432909797688470702512207472940215538148754820061518518664128018848687",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x377e7fe65cf198a7fc4fdae3f2136b74729279267858daaf96718b23bc2a5607",
+      "market_slug": "iran-leadership-change-by-december-31-974-976-658-482-568-685-996-469-827",
+      "question": "Iran leadership change by December 31?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 200.0,
+      "max_spread": 3.5,
+      "min_size": 200.0,
+      "tokens": [
+        {
+          "token_id": "18652479948917565296149340091675894865339012333173025944893512396354173886674",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "60499458684380641857666641513383149627633695110197406276308452075860198022694",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x5c79dfde05559b79a9cb9f7c4187e4d49632dd042572ae676952f812732591cc",
+      "market_slug": "strait-of-hormuz-traffic-returns-to-normal-by-december-31",
+      "question": "Strait of Hormuz traffic returns to normal by December 31?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 200.0,
+      "max_spread": 4.5,
+      "min_size": 200.0,
+      "tokens": [
+        {
+          "token_id": "83783489454659420807679723574840032660002326710045123865554753994450797728825",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "48727431314333088243693016929623363710488980152833544156961659445129455301311",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x490b4abcc5b23958f5515716fbab843574f9cffef4bc52eac3a3939809757b46",
+      "market_slug": "jack-lowdon-announced-as-next-james-bond-917",
+      "question": "Jack Lowden announced as next James Bond?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 167.0,
+      "max_spread": 4.5,
+      "min_size": 50.0,
+      "tokens": [
+        {
+          "token_id": "51360528208563810292617548915637013520775537929179951806395074353974983084730",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "84398328375476251033972782363473460090232405474369579323403988122052606893532",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0xd90cee5beead944e744381e3c16ef18e384c25bb130f7e46615b17e1b33b78d3",
+      "market_slug": "will-beatriz-mojica-morga-win-the-2027-guerrero-governor-election-20260803173852824",
+      "question": "Will Beatriz Mojica Morga win the 2027 Guerrero Governor Election?",
+      "end_date_iso": "2027-06-06T00:00:00Z",
+      "daily_rate": 153.0,
+      "max_spread": 5.5,
+      "min_size": 20.0,
+      "tokens": [
+        {
+          "token_id": "61889085640552111843028636333447991114876962739017843222174185342801218738156",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "98012947307137174303869008445089347944540344372545034325142295654051449457741",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x73d8a8208d23a74937d114a713d6a56cd4161a1068056c52ac74c8419c99da7c",
+      "market_slug": "fed-rate-hike-by-september-2026-meeting",
+      "question": "Fed Rate Hike by September 2026 Meeting?",
+      "end_date_iso": "2026-12-09T00:00:00Z",
+      "daily_rate": 150.0,
+      "max_spread": 4.5,
+      "min_size": 200.0,
+      "tokens": [
+        {
+          "token_id": "85779851379341776458330036851548114381176093953202542863538086591922931585951",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "107877692735091739444466304420480554317180662238363602253619698629369023430230",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x059db22dae2d735516017d47d1def0ea43e5d7221259c3aaa60c090d32566d4e",
+      "market_slug": "fed-rate-hike-by-october-2026-meeting",
+      "question": "Fed Rate Hike by October 2026 Meeting?",
+      "end_date_iso": "2026-12-09T00:00:00Z",
+      "daily_rate": 150.0,
+      "max_spread": 4.5,
+      "min_size": 200.0,
+      "tokens": [
+        {
+          "token_id": "55971470416346250683160735704399570247011109335331406752116975462530324793173",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "25962953645542704786103858182513234105684194966003467694572592749863651189160",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0xcd2640464754b9a894ffec98ac11554fdd507ea89ca01237eabb3a6de4a606e6",
+      "market_slug": "will-kimi-antonelli-be-the-2026-f1-drivers-champion",
+      "question": "Will Kimi Antonelli be the 2026 F1 Drivers' Champion?",
+      "end_date_iso": "2026-12-06T00:00:00Z",
+      "daily_rate": 148.0,
+      "max_spread": 4.5,
+      "min_size": 100.0,
+      "tokens": [
+        {
+          "token_id": "32950178421556833525068948927823594772134813180063196823389171317494746105102",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "113530594522634794165460425612745976368792987948987062860518413913599754643814",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0xdf55222217299506bd9b7b348ac3be51137ac480da920567722824f0c40c5fc0",
+      "market_slug": "callum-turner-announced-as-next-james-bond-288",
+      "question": "Callum Turner announced as next James Bond?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 148.0,
+      "max_spread": 4.5,
+      "min_size": 50.0,
+      "tokens": [
+        {
+          "token_id": "89824879989508558877298318180668970706354283881652611000189928031813295195430",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "30971237656949845428887701684975108826453416400115622294938418424537243639855",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0xdfd9e88f948c6875027c881dcb50daf56ae577b0e4c4349779e7bd448ddc3a0b",
+      "market_slug": "no-one-announced-as-next-james-bond",
+      "question": "No one announced as next James Bond?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 130.0,
+      "max_spread": 4.5,
+      "min_size": 50.0,
+      "tokens": [
+        {
+          "token_id": "28001841863735617420550382251583133275547664489410111787716262797262335318074",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "55811987156233316034004850162265185590623994721542035067805349300388333229197",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0xd4e77ba6f29fc093509d24f508631abd445ecf506bbdc9c4c80e60256a318527",
+      "market_slug": "will-no-fed-rate-cuts-happen-in-2026",
+      "question": "Will no Fed rate cuts happen in 2026?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 116.0,
+      "max_spread": 4.5,
+      "min_size": 50.0,
+      "tokens": [
+        {
+          "token_id": "12403602920039269077597917340921667997547115084613238528792639013246536343316",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "21294592205022969346730955103773391901993330222644504059576935265667917187903",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x79558ff86ae0d59862750f49da4ee3658d5457b39fdb3970753f4ced2076ae3b",
+      "market_slug": "will-uk-annual-gdp-growth-in-2026-be-between-1-and-2",
+      "question": "Will UK annual GDP growth in 2026 be between 1% and 2%?",
+      "end_date_iso": "2027-02-12T00:00:00Z",
+      "daily_rate": 111.0,
+      "max_spread": 4.5,
+      "min_size": 20.0,
+      "tokens": [
+        {
+          "token_id": "30752330740636654806370448368902796191678005646331740428292887705751635801032",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "19167232947386112339168711806951261784933850597792087206552394817553813020071",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0xb8b5ba728577c752f2147f8a15a1710b39c70bafe5fa9536159725c7f09779c4",
+      "market_slug": "will-gukesh-dommaraju-win-the-2026-world-chess-championship",
+      "question": "Will Gukesh Dommaraju win the 2026 World Chess Championship?",
+      "end_date_iso": "2027-01-01T00:00:00Z",
+      "daily_rate": 102.0,
+      "max_spread": 4.5,
+      "min_size": 50.0,
+      "tokens": [
+        {
+          "token_id": "110081642499887057602720911571042235022449889791095107840103468213700572553441",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "64542405206668347308218164066202152320154349704973005486915356371858338170069",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x15d2e66dcf1d63c5695d6d0e9e2f8e06dd246d00fd5dfc254f2b22baa33bfa1b",
+      "market_slug": "will-mitch-mcconnell-resign-from-the-senate-before-his-term-ends",
+      "question": "Mitch McConnell steps down from Senate before his term ends?",
+      "end_date_iso": "2027-01-03T00:00:00Z",
+      "daily_rate": 100.0,
+      "max_spread": 3.5,
+      "min_size": 200.0,
+      "tokens": [
+        {
+          "token_id": "79397895660526576528066965797785113521241099187839967306891454236823723226031",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "6176387069967725418539368518279260352303182827227966329832868478861860932409",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x3de0f3d7d7efb40cde68e814d40a0b232832083653c8e78260eb999baa967de0",
+      "market_slug": "us-strike-on-cuba-by-december-31",
+      "question": "US strike on Cuba by December 31?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 100.0,
+      "max_spread": 4.5,
+      "min_size": 100.0,
+      "tokens": [
+        {
+          "token_id": "91347242536105459969213788769929618447748782724898414007495579710952664644740",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "55782999195478978645683058282751482473275270795090145277907596121415418369349",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x8062cf78d93f9202f4c0a1018d141f4af35d486a368f07e65265f27d48b4e040",
+      "market_slug": "will-anthropic-ipo-by-october-31-2026",
+      "question": "Will Anthropic IPO by October 31, 2026?",
+      "end_date_iso": "2027-07-01T00:00:00Z",
+      "daily_rate": 100.0,
+      "max_spread": 5.5,
+      "min_size": 50.0,
+      "tokens": [
+        {
+          "token_id": "35480485928147694422522317298160081194603766865102488154902775756915955129166",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "85723516070077730883105909049388061597049173281613201910087943908235778734129",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0xfed2dd1e83691ca08b8bc08d2bed09cb19003730f2be47da6a467ee37df96fbb",
+      "market_slug": "mojtaba-khamenei-seen-in-public-by-december-31",
+      "question": "Mojtaba Khamenei seen in public by December 31?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 100.0,
+      "max_spread": 4.5,
+      "min_size": 200.0,
+      "tokens": [
+        {
+          "token_id": "106352973084247809978722887479381361784509565887960822996102387300658431649079",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "78735213477140259179719985437634225008013438052010449207550476177307188383355",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x46ca741da4abd7ffa993f59ac65bfe83de43ae027accac71d263a493e44064e7",
+      "market_slug": "us-announces-end-of-iranian-blockade-by-december-31-2026-20260727171803489-375-949-645-919-269-157",
+      "question": "US announces end of Iranian blockade by December 31, 2026?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 100.0,
+      "max_spread": 4.5,
+      "min_size": 200.0,
+      "tokens": [
+        {
+          "token_id": "86011229287950365043519117852041614651767455889324682112682327985496937935368",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "39147524522707536456910747992621671433032838141439193264830818731544404472030",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x1c4c6a698f0591ddf0c96e1beb56f8c75112ef849331bf3b0388f14830a7421d",
+      "market_slug": "israel-x-iran-ceasefire-continues-through-december-31",
+      "question": "Israel x Iran ceasefire continues through December 31?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 100.0,
+      "max_spread": 4.5,
+      "min_size": 200.0,
+      "tokens": [
+        {
+          "token_id": "34732988886981510167874389845708832808627284379840131351229635795767825787404",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "63915287271940688064870172991436489775587541335457370355314489349033951709373",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0xf35f7e818e58b63a996f909956b0ea1ad5c6517653cb4e67ce735e3666443920",
+      "market_slug": "will-javokhir-sindarov-win-the-2026-world-chess-championship",
+      "question": "Will Javokhir Sindarov win the 2026 World Chess Championship?",
+      "end_date_iso": "2027-01-01T00:00:00Z",
+      "daily_rate": 98.0,
+      "max_spread": 4.5,
+      "min_size": 50.0,
+      "tokens": [
+        {
+          "token_id": "113051954436140230967350044098811981944103572640132117862389458890801640599836",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "6624904433897150180863516533700115768229549138778045564938921788869570171122",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0xb66b710cf927a7156315648b147d52696c16c6530a63fb7a5680daad408275f5",
+      "market_slug": "will-geraldine-ponce-mendez-win-the-2027-nayarit-governor-election-20260803173853870",
+      "question": "Will Geraldine Ponce M\u00e9ndez win the 2027 Nayarit Governor Election?",
+      "end_date_iso": "2027-06-06T00:00:00Z",
+      "daily_rate": 93.0,
+      "max_spread": 5.5,
+      "min_size": 20.0,
+      "tokens": [
+        {
+          "token_id": "7311517859709182617317025195220322120571139444140855621495256140966833252484",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "96883874340380079939275874149262055445993322274978665170055063707377153677167",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x3849e1d62e0807801913d3e2427e8caf3cc6dd1c8ef42d8d5c08c6f9c449dc5e",
+      "market_slug": "will-openai-not-ipo-by-december-31-2026",
+      "question": "Will OpenAI not IPO by December 31, 2026?",
+      "end_date_iso": "2027-01-01T00:00:00Z",
+      "daily_rate": 88.0,
+      "max_spread": 4.5,
+      "min_size": 100.0,
+      "tokens": [
+        {
+          "token_id": "56615676606297588259337956203332341775475048285080710344367729433788967812170",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "8070607953656787024050950499598687532281829563384949938603247089607814583142",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x7ad403c3508f8e3912940fd1a913f227591145ca0614074208e0b962d5fcc422",
+      "market_slug": "will-jd-vance-win-the-2028-us-presidential-election",
+      "question": "Will JD Vance win the 2028 US Presidential Election?",
+      "end_date_iso": "2028-11-07T00:00:00Z",
+      "daily_rate": 86.0,
+      "max_spread": 5.5,
+      "min_size": 200.0,
+      "tokens": [
+        {
+          "token_id": "16040015440196279900485035793550429453516625694844857319147506590755961451627",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "94476829201604408463453426454480212459887267917122244941405244686637914508323",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0xb892396ad371095964a0f3106a6b338e26c645dcf11dea14e162ebc7f7aa25b4",
+      "market_slug": "will-anna-kelly-be-the-next-white-house-press-secretary-20260812210720649",
+      "question": "Will Anna Kelly be the next White House Press Secretary?",
+      "end_date_iso": "2026-12-31T00:00:00Z",
+      "daily_rate": 85.0,
+      "max_spread": 4.5,
+      "min_size": 50.0,
+      "tokens": [
+        {
+          "token_id": "59469762577014994344194653703640155028433303239421426759172783613957227351480",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "20046972558355680602210157686494131290554886867207306651882478854978749175448",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x2a0dcff6f438d1c92574b58d58e9fe4bc13f2db6399ec81655986e5925a61ffd",
+      "market_slug": "will-uk-annual-gdp-growth-in-2026-be-between-0-and-1",
+      "question": "Will UK annual GDP growth in 2026 be between 0% and 1%?",
+      "end_date_iso": "2027-02-12T00:00:00Z",
+      "daily_rate": 83.0,
+      "max_spread": 4.5,
+      "min_size": 20.0,
+      "tokens": [
+        {
+          "token_id": "65907759781726780880673711534240756105755151244576341724043979719660638426068",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "33221449857197206889569880053910907739676967731333759444351240861640873857582",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0x3b4e6cbbcbd2d16f2a4a86681aa50178f61bafdcc14ea9afa8c80d59799f021a",
+      "market_slug": "will-cruz-perez-cuellar-win-the-2027-chihuahua-governor-election-20260803173851746",
+      "question": "Will Cruz P\u00e9rez Cu\u00e9llar win the 2027 Chihuahua Governor Election?",
+      "end_date_iso": "2027-06-06T00:00:00Z",
+      "daily_rate": 78.0,
+      "max_spread": 5.5,
+      "min_size": 20.0,
+      "tokens": [
+        {
+          "token_id": "112595784623246158000276710037893598177629119201615914154709417335397816345362",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "11136675195162733055690709788325854039011991843512195988120932270578448111595",
+          "outcome": "No"
+        }
+      ]
+    },
+    {
+      "condition_id": "0xe6bcc2f1dd025ce5e1833190f7c60a71171c94f805df55b9ab0ded695ec93565",
+      "market_slug": "will-alexandria-ocasio-cortez-win-the-2028-democratic-presidential-nomination-653",
+      "question": "Will Alexandria Ocasio-Cortez win the 2028 Democratic presidential nomination?",
+      "end_date_iso": "2028-11-07T00:00:00Z",
+      "daily_rate": 77.0,
+      "max_spread": 5.5,
+      "min_size": 200.0,
+      "tokens": [
+        {
+          "token_id": "107064985435494333113391038470401719113272800530429703182710416066774068907304",
+          "outcome": "Yes"
+        },
+        {
+          "token_id": "65176072261324737856085688071627118509549293922582857186996392180609764586527",
+          "outcome": "No"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.DS_Store
+
+# Collected data is never committed — it lives on the droplet and is backed up
+# by ops/backup.sh as hardlinked snapshots under ~/laminar-backup.
+# It is far too large for git and would make the history unusable.
+data/
+
+# Host, key and mail endpoint — see ops/local.env.example
+ops/local.env

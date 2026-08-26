@@ -1,0 +1,33 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      # A clean install, not a PYTHONPATH hack: the README tells contributors
+      # this is how you set the project up, so CI has to prove that claim on a
+      # machine that has never seen it.
+      - run: pip install -e '.[dev]'
+      - run: pytest tests -q
+
+  leak-scan:
+    # Implemented in ops/leak_scan.sh so that CI and the local pre-push hook run
+    # exactly the same check — a guard that differs between the two places is a
+    # guard you cannot trust.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ops/leak_scan.sh

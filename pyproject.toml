@@ -1,0 +1,25 @@
+[project]
+name = "farseer"
+version = "0.1.0"
+description = "Quantitative trading system — Stage 1: data, signals, backtest, evaluation"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.32",
+    "polars>=1.0",
+    "numpy>=1.26",
+    "pyyaml>=6.0",
+    "plotly>=5.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+# Crescendo (separate trading app) backbone — heavy Rust-core framework, pinned per the
+# "verify maturity, pin the version" discipline. Not required by the Farseer council.
+crescendo = ["nautilus_trader==1.230.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
