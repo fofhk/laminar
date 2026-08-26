@@ -20,7 +20,7 @@ Stage 1 只读采集第 11 天,满勤,**9/4 门槛裁决**;Stage 2 影子研究�
 | `root@DROPLET_IP:/opt/farseer/` | 运行环境(SGP1 droplet),cron 在这里跑 |
 | `root@DROPLET_IP:/opt/backups/git/laminar.git` | 代码异地镜像(bare) |
 | `~/laminar-backup/` | 数据异地快照(带日期,硬链接去重) |
-| `github.com/<you>/laminar`(公开) | 公开镜像,供他人审查/改进 —— **已净化,见下** |
+| `github.com/fofhk/laminar`(公开) | 公开镜像,供他人审查/改进 —— **已净化,见下** |
 
 `CC/farseer/` 里的 laminar 文件是**迁出前的旧副本,已过期,不要读、不要改**
 (见该目录下 `LAMINAR_MOVED.md`)。
