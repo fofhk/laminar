@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0"]
+dev = ["pytest>=8.0", "jsonschema>=4.0"]
 # Crescendo (separate trading app) backbone — heavy Rust-core framework, pinned per the
 # "verify maturity, pin the version" discipline. Not required by the Farseer council.
 crescendo = ["nautilus_trader==1.230.0"]

@@ -98,7 +98,10 @@ Stage 1 collection is running; the gate decision is due 2026-09-04. Stage 3
 and nothing in this repo advises anyone on how to get around them.
 
 Nothing here is investment advice, and no result in it has been confirmed
-against live execution.
+against live execution. This is an observational study, not a trading system —
+if you intend to trade with any of it, read [`DISCLAIMER.md`](DISCLAIMER.md)
+first. It is short, and the qualifications in it are not boilerplate: the
+self-impact layer that would make published yields *worse* is not written yet.
 
 ## Contributing
 
@@ -115,6 +118,28 @@ instead of guessing at it. The two I would most like a second opinion on:
 
 [`CONTRIBUTING.md`](CONTRIBUTING.md) has the setup and the five house rules —
 the first being *bracket, don't estimate*.
+
+## If you run this live
+
+Then you can measure something this repository cannot, and it is the single
+thing most worth having. Your share of a reward epoch is `mine / (mine + D)`,
+and `D` — everyone else's qualifying size — is never published, which is why
+Stage 2 only brackets it. **One reward payment pins it down exactly**, from
+three numbers off your own account:
+
+```
+D = mine_qmin x (pool_usdc - reward_paid_usdc) / reward_paid_usdc
+```
+
+No market data is involved, and that is the point:
+[`docs/FEEDBACK_PROTOCOL.md`](docs/FEEDBACK_PROTOCOL.md) defines a report format
+that carries **conclusions you computed locally, never the data you computed
+them from** — the schema rejects anything else. Submit one as a PR adding a file
+to `contrib/reports/`; CI validates it and recomputes its conclusions from its
+own inputs.
+
+A report that contradicts a published result here is more welcome than one that
+confirms it.
 
 ## Licence
 

@@ -23,6 +23,20 @@ jobs:
       - run: pip install -e '.[dev]'
       - run: pytest tests -q
 
+  reports:
+    # Contributor live reports (docs/FEEDBACK_PROTOCOL.md) carry both their
+    # inputs and their conclusions, so CI recomputes the conclusions from the
+    # inputs instead of taking a submitter's word for them. Same standard the
+    # rest of the project applies to its own numbers.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -e '.[dev]'
+      - run: ops/validate_reports.py
+
   leak-scan:
     # Implemented in ops/leak_scan.sh so that CI and the local pre-push hook run
     # exactly the same check — a guard that differs between the two places is a

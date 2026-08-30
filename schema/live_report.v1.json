@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fofhk/laminar/blob/main/schema/live_report.v1.json",
+  "title": "Laminar live report v1",
+  "description": "An outcome report from someone who ran quotes against a live venue. It carries CONCLUSIONS the reporter computed locally, never the market data those conclusions were computed from. `additionalProperties` is false throughout, so a field that is not listed here cannot be submitted — that is the mechanism, not a style choice. See docs/FEEDBACK_PROTOCOL.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "reported_at", "window", "laminar_commit", "venue", "observations"],
+  "properties": {
+    "schema": {
+      "const": "laminar/live_report/v1"
+    },
+    "reported_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "Date the report was written, ISO 8601."
+    },
+    "reporter": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "GitHub handle or any pseudonym you like, for credit. Optional — an anonymous report is still worth having. Do not put an e-mail address here; the leak scan rejects them."
+    },
+    "laminar_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{7,40}$",
+      "description": "The Laminar commit you ran. Without it a disagreement cannot be attributed."
+    },
+    "venue": {
+      "enum": ["polymarket"],
+      "description": "Only Polymarket is modelled. A report from another venue would need its own scoring rules."
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end", "epochs"],
+      "properties": {
+        "start": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+        "end": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+        "epochs": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of reward epochs the report aggregates. One is enough to be useful."
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "minItems": 1,
+      "description": "One entry per thing you measured. Mixed kinds are fine.",
+      "items": {
+        "oneOf": [
+          {"$ref": "#/$defs/denominator_measurement"},
+          {"$ref": "#/$defs/queue_bracket"},
+          {"$ref": "#/$defs/yield_realised"},
+          {"$ref": "#/$defs/other"}
+        ]
+      }
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 4000,
+      "description": "Free text: caveats, what went wrong, what you would not trust in your own numbers. Prose only — do not paste data here."
+    }
+  },
+  "$defs": {
+    "verdict": {
+      "enum": ["inside", "below", "above", "undetermined"],
+      "description": "Where the realised quantity fell relative to Laminar's predicted interval. `undetermined` is a first-class answer — house rule 2 is that you count what you cannot resolve rather than defaulting it."
+    },
+    "condition_id": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{64}$",
+      "description": "Public market condition_id. 64 hex characters — a 40-character wallet address cannot satisfy this pattern, deliberately. Optional; omit it if naming the market tells anyone too much about your position."
+    },
+    "denominator_measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Q4 — the reward denominator, measured rather than bracketed",
+      "description": "The highest-value report. Your realised share of a reward pool is a direct measurement of the competing field's total score D, which is never published. Requires no market data: mine_qmin comes from your own order log through src/laminar/score.py, the other two come off your own reward statement.",
+      "required": ["kind", "epochs", "mine_qmin", "reward_paid_usdc", "pool_usdc", "d_implied", "d_min", "d_max", "verdict"],
+      "properties": {
+        "kind": {"const": "denominator_measurement"},
+        "question": {"const": 4},
+        "market": {"$ref": "#/$defs/condition_id"},
+        "epochs": {"type": "integer", "minimum": 1},
+        "mine_qmin": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "YOUR score, summed over the same samples the reward covers, from laminar.score.qmin()."
+        },
+        "reward_paid_usdc": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "What you were actually paid over those epochs."
+        },
+        "pool_usdc": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "The advertised pool over those epochs (daily_rate x days). See the protocol doc on why an under-distributed pool biases d_implied upward."
+        },
+        "d_implied": {
+          "type": "number",
+          "minimum": 0,
+          "description": "mine_qmin * (pool_usdc - reward_paid_usdc) / reward_paid_usdc. CI recomputes this from your inputs and rejects the report if it disagrees by more than 0.5%."
+        },
+        "d_min": {"type": "number", "minimum": 0, "description": "Lower bracket from laminar.score.denominator_bounds() on the book you observed."},
+        "d_max": {"type": "number", "minimum": 0, "description": "Upper bracket from the same call."},
+        "verdict": {"$ref": "#/$defs/verdict"}
+      }
+    },
+    "queue_bracket": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Q1/Q5 — did real fills land inside the front/back-of-queue bracket",
+      "description": "shadow.py claims the truth lies between QUEUE_FRONT and QUEUE_BACK. Live fills test that claim. A `below` verdict — fewer real fills than the pessimistic bound — falsifies it.",
+      "required": ["kind", "orders_resting", "orders_filled", "predicted_fills_back", "predicted_fills_front", "verdict"],
+      "properties": {
+        "kind": {"const": "queue_bracket"},
+        "question": {"enum": [1, 5]},
+        "market": {"$ref": "#/$defs/condition_id"},
+        "orders_resting": {"type": "integer", "minimum": 1, "description": "Orders you rested that shadow.py was also asked to simulate."},
+        "orders_filled": {"type": "integer", "minimum": 0, "description": "How many actually filled, wholly or partly."},
+        "predicted_fills_back": {"type": "number", "minimum": 0, "description": "shadow.replay(queue=QUEUE_BACK) on the same orders — the pessimistic bound."},
+        "predicted_fills_front": {"type": "number", "minimum": 0, "description": "shadow.replay(queue=QUEUE_FRONT) — the optimistic bound."},
+        "unresolved": {"type": "integer", "minimum": 0, "description": "Cases the simulator declined to decide. Report it; it is the honest part of the output."},
+        "verdict": {"$ref": "#/$defs/verdict"}
+      }
+    },
+    "yield_realised": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "The headline — did realised reward yield land in the predicted interval",
+      "description": "Gross reward yield only. Do not net out adverse selection here; report that separately as `other`, because Laminar has no prediction to compare it against yet.",
+      "required": ["kind", "epochs", "capital_usdc", "rewards_usdc", "realised_bps_per_day", "predicted_bps_lo", "predicted_bps_hi", "verdict"],
+      "properties": {
+        "kind": {"const": "yield_realised"},
+        "capital_usdc": {"type": "number", "exclusiveMinimum": 0, "description": "Capital actually committed to resting quotes, averaged over the window."},
+        "rewards_usdc": {"type": "number", "minimum": 0},
+        "epochs": {"type": "integer", "minimum": 1},
+        "realised_bps_per_day": {"type": "number", "description": "Gross, on committed capital."},
+        "predicted_bps_lo": {"type": "number"},
+        "predicted_bps_hi": {"type": "number"},
+        "verdict": {"$ref": "#/$defs/verdict"}
+      }
+    },
+    "other": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Anything the three kinds above cannot express",
+      "description": "An escape hatch on purpose. If you measured something real and the schema has no shape for it, say so in prose rather than forcing it into the wrong field — a wrong field is worse than free text.",
+      "required": ["kind", "question", "summary"],
+      "properties": {
+        "kind": {"const": "other"},
+        "question": {"type": "integer", "minimum": 1, "maximum": 6, "description": "Which docs/OPEN_QUESTIONS.md item this bears on."},
+        "summary": {"type": "string", "minLength": 20, "maxLength": 4000, "description": "What you measured, how, and what you concluded. Prose and summary statistics — not data."},
+        "verdict": {"$ref": "#/$defs/verdict"}
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "laminar/live_report/v1",
+  "reported_at": "2026-10-02",
+  "reporter": "example",
+  "laminar_commit": "8407ed9",
+  "venue": "polymarket",
+  "window": {"start": "2026-09-18", "end": "2026-09-30", "epochs": 13},
+  "observations": [
+    {
+      "kind": "denominator_measurement",
+      "question": 4,
+      "epochs": 13,
+      "mine_qmin": 812.4,
+      "reward_paid_usdc": 41.77,
+      "pool_usdc": 226.0,
+      "d_implied": 3583.16,
+      "d_min": 2900.0,
+      "d_max": 5100.0,
+      "verdict": "inside"
+    },
+    {
+      "kind": "queue_bracket",
+      "question": 1,
+      "orders_resting": 412,
+      "orders_filled": 173,
+      "predicted_fills_back": 95.0,
+      "predicted_fills_front": 240.0,
+      "unresolved": 18,
+      "verdict": "inside"
+    },
+    {
+      "kind": "other",
+      "question": 3,
+      "summary": "Invented figures. This file exists so the schema has a worked example and so CI proves the example still conforms; it is not a measurement and must not be cited as one.",
+      "verdict": "undetermined"
+    }
+  ],
+  "notes": "Illustrative only — every number here is made up."
+}

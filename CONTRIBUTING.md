@@ -48,6 +48,14 @@ cannot reproduce my numbers from this repository alone.** What you can do is
 If you have gathered comparable data independently and get a different answer
 from mine, that is the single most valuable thing you could report.
 
+And if you go further and quote **live**, see
+[`docs/FEEDBACK_PROTOCOL.md`](docs/FEEDBACK_PROTOCOL.md). It defines a narrow
+report format — outcomes you computed locally, never venue market data — with a
+schema and a CI check. A single live reward payment measures the reward
+denominator exactly, which no amount of public data does. Trading with this is
+entirely your own decision and your own risk; [`DISCLAIMER.md`](DISCLAIMER.md)
+says so properly.
+
 ## What I am actually asking for
 
 See [`docs/OPEN_QUESTIONS.md`](docs/OPEN_QUESTIONS.md). The two I would most
