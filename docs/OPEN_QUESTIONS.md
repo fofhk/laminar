@@ -73,13 +73,15 @@ D_max = min(Q1, Q2) + |Q1 - Q2| / c
 D_min = (Q1 + Q2) / (c + 1)          # c = 3.0
 ```
 
-Measured on real data the ratio `D_max / D_min` has median ~1.75x.
+Measured on real data (full 22-day window) the ratio `D_max / D_min` has
+median 1.787x (p5 1.382, p95 1.980) and never reached the 3x abandon line.
 
 **I had a hypothesis and measurement killed it.** I expected the bracket to
 narrow at size, since `share = mine/(mine+D)` tends to 1 as `mine` grows and the
-two corners should converge. Measured: hi/lo = 1.65 at 3,000 shares versus 1.59
-at 200 — essentially flat, and mildly *worse* at size. I do not have a
-satisfying explanation for why the convergence argument fails.
+two corners should converge. Measured on the full window: hi/lo = **1.63** at
+3,000 shares versus **1.64** at 200 — flat, and it only starts narrowing near
+10,000 shares (~1.47, ≈$300k). I do not have a satisfying explanation for why
+the convergence argument fails.
 
 **The question:** is the derivation of the bounds tight? Is there a sharper pair
 recoverable from the same public quantities? And why doesn't the bracket narrow?

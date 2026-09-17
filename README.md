@@ -93,9 +93,15 @@ under whatever terms apply to you.
 
 ## Status and scope
 
-Stage 1 collection is running; the gate decision is due 2026-09-04. Stage 3
-(live quoting) is blocked on Polymarket's jurisdiction terms, not on the data,
-and nothing in this repo advises anyone on how to get around them.
+Stage 1 closed on 2026-09-04 and was scored on 2026-09-06: all three
+pre-registered gates pass on the full 22-day window, but none of them was
+structurally capable of failing, and the number that decides anything — the
+pessimistic-corner annualised yield at ~$90k — is 115.3% **gross** against a
+110% **net** deployment floor, with the self-impact, adverse-selection and
+inventory cost layers still unwritten. See
+[`docs/STAGE1_RESULTS.md`](docs/STAGE1_RESULTS.md). Stage 3 (live quoting) is
+blocked on Polymarket's jurisdiction terms and its data-use terms, not on the
+data, and nothing in this repo advises anyone on how to get around them.
 
 Nothing here is investment advice, and no result in it has been confirmed
 against live execution. This is an observational study, not a trading system —
